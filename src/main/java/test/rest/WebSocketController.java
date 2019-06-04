@@ -30,9 +30,11 @@ public class WebSocketController {
         count.incrementAndGet();
         String res = msg.getName() + "强化了CT" + count.get() + "次;+";
         Random random = new Random(System.currentTimeMillis());
-        int i = random.nextInt() % 100;
+        int i = Math.abs(random.nextInt() % 100);
+        System.out.println(i);
         System.out.println(chance.get());
-        if (i <= chance.get()) {
+
+        if (i <= chance.get() && i >= 1) {
             tag.incrementAndGet();
             res += tag.get() + "成功，恭喜!";
             if (tag.get() >= 10) {
