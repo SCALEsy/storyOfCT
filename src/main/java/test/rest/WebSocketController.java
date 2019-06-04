@@ -45,7 +45,6 @@ public class WebSocketController {
         } else {
             res += (tag.get() + 1) + "失败，恭喜!";
         }
-
         return new Result<>(ResultType.SUCCESS, res);
     }
 }
